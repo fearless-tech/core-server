@@ -1,0 +1,40 @@
+{
+  "name": "fearless-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Core server for the Fearless Tech suite of applications",
+  "author": "Fearless Tech (https://github.com/fearless-tech)",
+  "license": "UNLICENSED",
+  "main": "server",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "jest -i",
+    "test:watch": "jest -i --watch",
+    "---": "---",
+    "update": "npm audit fix && ncu -u",
+    "update:check": "npm audit && ncu"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.2",
+    "npm-check-updates": "^4.0.1",
+    "prettier": "^1.19.1",
+    "superagent": "^5.2.2",
+    "supertest": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
+}
